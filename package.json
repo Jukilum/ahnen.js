@@ -1,13 +1,15 @@
 {
   "name": "ahnen",
   "version": "1.0.0",
-  "description": "Get data from an Ahnen number",
+  "description": "A set of javascript functions for interpreting Ahnentafel numbers for genealogy.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "geneaology",
+    "genealogical-data",
+    "genealogical-trees",
     "ancestry"
   ],
   "author": "Luke Nelson",
