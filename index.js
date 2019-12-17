@@ -1,0 +1,91 @@
+﻿exports.sex = function(ascendancyNum){
+	var gender = undefined;
+	
+	if(ascendancyNum % 2 == 1) {
+        gender = 'female';
+        ascendancyNum -= 1;
+    } else {
+        gender = 'male';
+    }
+    
+    return gender;
+};
+
+exports.line = function (ascendancyNum){
+	
+	if(validNumber == false){
+		return "error";
+	} 
+    
+    var line = checkLine(ascendancyNum);
+	// If the number is already 1,2, or 3, no further calculations need to be run. 
+	// Higher or missing numbers return as "undetermined"
+    
+    if(line != 'undetermined') {
+        return line;
+    } else {
+        //If the number is odd, subtract 1, unless the number is 3 because that 
+        //	means the mother's line and that is as far as this should go. 
+        //Otherwise it returns everyone as fathersLine
+        //	The loop always returns 1,2,3 or undetermined
+        for(i = ascendancyNum; line == 'undetermined'; i /= 2) {
+            if(i % 2 == 1 && i != 3) {
+                i -= 1;
+            }
+            line = checkLine(i);
+        }
+
+        return line;
+    }
+};
+
+exports.fullLine = function(ascendancyNum) {
+	if(validNumber == false){
+		return "error";
+	} 
+	var ascendancy = [];
+	var i = ascendancyNum;
+	
+        //M = Mother, F = Father
+        //This loop calculates like the one in exports.line
+        do {
+            if(i % 2 == 1) {
+                ascendancy.splice(0,0,"M");
+                if(i > 3){
+                	i -= 1;
+                }
+        	} else if(i % 2 == 0){
+        		ascendancy.splice(0,0,"F");
+        	} else {
+        		throw "The ascendancy path can only be generated for Ahnen numbers higher than 1.";
+        	}
+        	i /= 2;
+		}
+		while(i >= 2);
+		
+		return ascendancy;
+};
+
+var checkLine = function(ascendancyNum) {
+    
+        switch(ascendancyNum) {
+        case 1: 
+            return 'rootPerson';
+            
+        case 2: 
+            return 'fathersLine';
+            
+        case 3:
+            return 'mothersLine';
+            
+        default:
+            return 'undetermined';
+        }
+    
+};
+
+var validNumber = function(ascendancyNum){
+	if(Number.isInteger(ascendancyNum) == false && ascendancyNum <= 0){
+		return false;
+	} else {return true;}
+};
