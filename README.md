@@ -1,5 +1,5 @@
 # Ahnen.js
-A set of functions for interpreting [Ahnentafel](https://en.wikipedia.org/wiki/Ahnentafel) numbers for genealogy.
+A set of javascript functions for interpreting [Ahnentafel](https://en.wikipedia.org/wiki/Ahnentafel) numbers for genealogy.
 
 Works with node.js. A standalone version of the code is available in the Standalone folder
 
