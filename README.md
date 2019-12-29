@@ -1,7 +1,7 @@
 # Ahnen.js
 A set of javascript functions for interpreting [ahnentafel](https://en.wikipedia.org/wiki/Ahnentafel) numbers for genealogy. Try it out [here](https://jukilum.github.io/ahnen.js/index.html).
 
-Works with node.js. A standalone version of the code is available in the Standalone folder
+Works with node.js. A standalone version of the code is available in the Standalone folder.
 
 ## Functions
 ``` js
