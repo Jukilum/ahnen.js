@@ -97,6 +97,9 @@ validNumber = function(ascendancyNum){
 </script>
 <script> 
 	function calculate(){
+		if(validNumber == false)
+			{return "error";}
+		
 	var number = parseInt(document.getElementById("number").value);
 	
 		var returnText;
@@ -110,7 +113,7 @@ validNumber = function(ascendancyNum){
 
 </script>
 <body>
-<p>
+	<p>Enter an ahnen number:</p>
 <input id="number">
 <button type="button" onclick="calculate()">Calculate</button>
 <p id="results"></p>
