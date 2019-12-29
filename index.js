@@ -1,4 +1,7 @@
 ﻿exports.sex = function(ascendancyNum){
+	if(validNumber(ascendancyNum) == false){
+		return "error";
+	} 
 	var gender = undefined;
 	
 	if(ascendancyNum % 2 == 1) {
@@ -7,13 +10,12 @@
     } else {
         gender = 'male';
     }
-    
     return gender;
 };
 
 exports.line = function (ascendancyNum){
 	
-	if(validNumber == false){
+	if(validNumber(ascendancyNum) == false){
 		return "error";
 	} 
     
@@ -34,13 +36,12 @@ exports.line = function (ascendancyNum){
             }
             line = checkLine(i);
         }
-
         return line;
     }
 };
 
 exports.fullLine = function(ascendancyNum) {
-	if(validNumber == false){
+	if(validNumber(ascendancyNum) == false){
 		return "error";
 	} 
 	var ascendancy = [];
@@ -85,7 +86,7 @@ var checkLine = function(ascendancyNum) {
 };
 
 var validNumber = function(ascendancyNum){
-	if(Number.isInteger(ascendancyNum) == false && ascendancyNum <= 0){
+	if(Number.isInteger(ascendancyNum) === false || ascendancyNum <= 0){
 		return false;
 	} else {return true;}
 };

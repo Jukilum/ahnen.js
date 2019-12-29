@@ -1,19 +1,21 @@
 sex = function(ascendancyNum){
-	var gender = undefined;
+		if(validNumber(ascendancyNum) == false){
+			return "error";
+		} 
+		var gender = undefined;
 	
-	if(ascendancyNum % 2 == 1) {
-        gender = 'female';
-        ascendancyNum -= 1;
-    } else {
-        gender = 'male';
+		if(ascendancyNum % 2 == 1) {
+        	gender = 'female';
+        	ascendancyNum -= 1;
+    	} else {
+        	gender = 'male';
     }
     
     return gender;
 };
-
 line = function (ascendancyNum){
 	
-	if(validNumber == false){
+	if(validNumber(ascendancyNum) == false){
 		return "error";
 	} 
     
@@ -34,13 +36,11 @@ line = function (ascendancyNum){
             }
             line = checkLine(i);
         }
-
         return line;
     }
 };
-
 fullLine = function(ascendancyNum) {
-	if(validNumber == false){
+	if(validNumber(ascendancyNum) == false){
 		return "error";
 	} 
 	var ascendancy = [];
@@ -65,7 +65,6 @@ fullLine = function(ascendancyNum) {
 		
 		return ascendancy;
 };
-
 checkLine = function(ascendancyNum) {
     
         switch(ascendancyNum) {
@@ -83,9 +82,8 @@ checkLine = function(ascendancyNum) {
         }
     
 };
-
 validNumber = function(ascendancyNum){
-	if(Number.isInteger(ascendancyNum) == false && ascendancyNum <= 0){
+	if(Number.isInteger(ascendancyNum) === false || ascendancyNum <= 0){
 		return false;
 	} else {return true;}
 };
