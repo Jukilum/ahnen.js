@@ -1,6 +1,6 @@
 {
   "name": "ahnen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of javascript functions for interpreting ahnentafel numbers for genealogy.",
   "main": "index.js",
   "scripts": {
