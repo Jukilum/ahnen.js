@@ -20,6 +20,6 @@
   "author": "Luke Nelson",
   "license": "MIT",
   "dependencies": {
-    "npm": "^6.13.4"
+    "npm": "^11.7.0"
   }
 }
